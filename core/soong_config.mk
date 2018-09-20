@@ -110,6 +110,7 @@ endif
 $(call add_json_bool, Has_legacy_camera_hal1,            $(filter true,$(if $(filter true,$(TARGET_HAS_LEGACY_CAMERA_HAL1)),true,false)))
 $(call add_json_str_omitempty, Target_process_sdk_version_override, $(TARGET_PROCESS_SDK_VERSION_OVERRIDE))
 $(call add_json_str,  Target_shim_libs,                  $(subst $(space),:,$(TARGET_LD_SHIM_LIBS)))
+$(call add_json_str_omitempty, Target_shim_libs,         $(subst $(space),:,$(TARGET_LD_SHIM_LIBS)))
 
 $(call add_json_bool, ArtUseReadBarrier,                 $(call invert_bool,$(filter false,$(PRODUCT_ART_USE_READ_BARRIER))))
 $(call add_json_bool, Binder32bit,                       $(BINDER32BIT))
