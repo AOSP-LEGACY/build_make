@@ -55,7 +55,6 @@ PRODUCT_PACKAGES += \
     ManagedProvisioning \
     MmsService \
     MtpDocumentsProvider \
-    MusicFX \
     NfcNci \
     OsuLogin \
     PacProcessor \
