@@ -964,6 +964,24 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   system_progress = 0.75
 
+  build_date = target_info.GetBuildProp("ro.build.date")
+  security_patch = target_info.GetBuildProp("ro.build.version.security_patch")
+  device = target_info.GetBuildProp("ro.product.device")
+  modelname = target_info.GetBuildProp("ro.product.model")
+  manufacturer = target_info.GetBuildProp("ro.product.manufacturer")
+
+  script.Print(" ");
+  script.Print("************************************************");
+  script.Print("                   AOSP 10.0                    ");
+  script.Print("             by @ghostrider-reborn              ");
+  script.Print("************************************************");
+  script.Print(" Security patch : %s" % security_patch);
+  script.Print(" Build date     : %s" % build_date);
+  script.Print(" Device         : %s (%s)" % (device, modelname));
+  script.Print(" Manufacturer   : %s" % manufacturer);
+  script.Print("************************************************");
+  script.Print(" ");
+
   if OPTIONS.wipe_user_data:
     system_progress -= 0.1
   if HasVendorPartition(input_zip):
